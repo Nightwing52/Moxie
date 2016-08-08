@@ -16,6 +16,7 @@ set(SOURCES
         main.cpp
         Framework/Display.cpp
         Framework/Input.cpp
+        Framework/Shader.cpp
 )
 
 add_executable(${PROJECT_NAME} ${SOURCES})

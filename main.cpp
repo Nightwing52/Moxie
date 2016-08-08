@@ -1,4 +1,5 @@
 #include "Display.h"
+#include "Shader.h"
 #include "Input.h"
 #include <iostream>
 #include <stdexcept>
@@ -7,6 +8,8 @@ using namespace std;
 int main(int argc, char *argv[]) {
         try {
                 Display screen("Windfall", 1600, 900);
+                Shader vshad("res/shaders/vs.glsl", GL_VERTEX_SHADER);
+                Shader fshad("res/shaders/fs.glsl", GL_FRAGMENT_SHADER);
                 Input input;
                 
                 bool running = true;
