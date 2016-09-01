@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0)
-project("windfall" LANGUAGES CXX VERSION 0.01)
+project("windfall" LANGUAGES CXX VERSION 0.02)
 
 find_package(SDL2 REQUIRED)
 find_package(OpenGL REQUIRED)
@@ -14,9 +14,10 @@ include_directories(
 
 set(SOURCES
         main.cpp
-        Framework/Display.cpp
-        Framework/Input.cpp
-        Framework/Shader.cpp
+        src/Framework/Display.cpp
+        src/Framework/Input.cpp
+        src/Framework/Shader.cpp
+        src/Framework/Mesh.cpp
 )
 
 add_executable(${PROJECT_NAME} ${SOURCES})
@@ -26,3 +27,8 @@ target_link_libraries(${PROJECT_NAME}
         ${GLEW_LIBRARIES}
 )
 target_compile_features(${PROJECT_NAME} PRIVATE cxx_range_for)
+
+install(TARGETS ${PROJECT_NAME}
+        RUNTIME DESTINATION bin
+        LIBRARY DESTINATION lib)
+install(DIRECTORY res/ DESTINATION share/windfall)
