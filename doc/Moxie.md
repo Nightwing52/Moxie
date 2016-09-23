@@ -19,3 +19,14 @@ All Moxie files are structured in the same way:
 * Texture Coord Array
 * Normalized Vertex Array
 * Armature Array (Still in development)
+
+Each section has a section header that identifies the section
+and lists the size of that section in a two byte value. Each
+value (except the section header) is stored in a 4 byte floating
+point value. The resulting tree structure is as follows:
+
+* 0xFE4D4F58 (File Header)
+* 0x4DE5 (Vertex section)
+* 0x4DE6 (Texture Coordinate section)
+* 0x4DE7 (Normalized Vertex section)
+* 0x4DE8 (Armature section)
