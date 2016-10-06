@@ -4,12 +4,16 @@ project("windfall" LANGUAGES CXX VERSION 0.02)
 find_package(SDL2 REQUIRED)
 find_package(OpenGL REQUIRED)
 find_package(GLEW REQUIRED)
+find_package(glm REQUIRED)
+
+set(INCLUDE_DIR "${CMAKE_SOURCE_DIR}/include")
 
 include_directories(
-        ${CMAKE_SOURCE_DIR}/include
+        ${INCLUDE_DIR}
         ${SDL2_INCLUDE_DIRS}
         ${OPENGL_INCLUDE_DIR}
-        ${GLEW_INCLUDE_DIR}
+        ${GLEW_INCLUDE_DIRS}
+        ${GLM_INCLUDE_DIRS}
 )
 
 set(SOURCES

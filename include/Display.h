@@ -1,8 +1,8 @@
 #ifndef DISPLAY_H
 #define DISPLAY_H
 
-#include <SDL2/SDL.h>
-#include <GL/glew.h>
+#include "SDL.h"
+#include "GL/glew.h"
 #include <iostream>
 #include <stdexcept>
 #include <string>
