@@ -17,7 +17,7 @@ include_directories(
 )
 
 set(SOURCES
-        main.cpp
+        src/main.cpp
         src/Framework/Display.cpp
         src/Framework/Input.cpp
         src/Framework/Shader.cpp
