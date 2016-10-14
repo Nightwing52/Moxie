@@ -81,4 +81,5 @@ Sidenotes
 ---------
 If using GNU Emacs or something similar that automatically formats code,
 format the code yourself. Also, make sure the code actually builds
-*before* sending patches.
+*before* sending patches. One last note, try to avoid lines longer than
+80 characters; exceptions can be made to this rule.

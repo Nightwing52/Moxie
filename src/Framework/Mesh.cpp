@@ -8,7 +8,7 @@ Mesh::Mesh(const string &filename) {
         uint32_t magic;
         uint16_t secHead;
         uint16_t secSize;
-        float *data;
+        void *data;
 
         file.read((char*)&magic, 4);
         if (magic != 0x584F4DFE)
@@ -19,25 +19,21 @@ Mesh::Mesh(const string &filename) {
                 file.read((char*)&secSize, 2);
                 switch(secHead) {
                         case 0xE54D:
-                                // Vertex List
                                 m_vertices = new glm::vec3[secSize/3];
                                 file.read((char*)m_vertices,
-                                                sizeof(float)*secSize);
+                                                secSize/sizeof(float));
                                 break;
                         case 0xE64D:
-                                // Texture Coords
                                 m_texCoords = new glm::vec2[secSize/2];
                                 file.read((char*)m_texCoords,
-                                                sizeof(float)*secSize);
+                                                secSize/sizeof(float));
                                 break;
                         case 0xE74D:
-                                // Normal List
                                 m_normals = new glm::vec3[secSize/3];
                                 file.read((char*)m_normals,
-                                                sizeof(float)*secSize);
+                                                secSize/sizeof(float));
                                 break;
                         case 0xE84D:
-                                // Bone List
                                 // Still working on this
                                 break;
                         default:
@@ -91,6 +87,9 @@ void Mesh::Draw(const float x, const float y, const float z) {
 }
 
 Mesh::~Mesh() {
+        delete[] m_vertices;
+        delete[] m_texCoords;
+        delete[] m_normals;
         glDeleteBuffers(NUM_BUFFERS, m_VABs);
         glDeleteVertexArrays(1, &m_VAO);
 }
