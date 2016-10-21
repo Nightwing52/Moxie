@@ -21,9 +21,9 @@ All Moxie files are structured in the same way:
 * Armature Array (Still in development)
 
 Each section has a section header that identifies the section
-and lists the size of that section in a two byte value. Each
-value (except the section header) is stored in a 4 byte floating
-point value. The resulting tree structure is as follows:
+and lists the size of that section in a two byte value (4 bytes
+total). Each value (except the section header) is stored in a
+4 byte floating point value. The resulting tree structure is as follows:
 
 * 0xFE4D4F58 (File Header)
 * 0x4DE5 (Vertex section)
