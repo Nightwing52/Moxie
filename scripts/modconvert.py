@@ -23,10 +23,12 @@ mesh = scene.meshes[0]
 verts = list(itertools.chain.from_iterable(mesh.vertices))
 norms = list(itertools.chain.from_iterable(mesh.normals))
 crds = list(itertools.chain.from_iterable(mesh.texturecoords))
+arms = list(itertools.chain.from_iterable(mesh.bones))
 
 numVerts = len(verts)
 numNorms = len(norms)
 numCrds = len(crds)
+numArms = len(arms)
 
 if args.verbose:
     print("Found", numVerts, "vertices")
@@ -36,14 +38,21 @@ if args.verbose:
 
 f = open(args.result, "wb")
 f.write(bytes([0xFE, 0x4D, 0x4F, 0x58]))
+
 f.write(bytes([0x4D, 0xE5]))
-f.write(struct.pack('>H', numVerts))
+f.write(struct.pack('<H', numVerts))
 f.write(struct.pack('%sf' % numVerts, *verts))
+
 f.write(bytes([0x4D, 0xE6]))
-f.write(struct.pack('>H', numNorms))
+f.write(struct.pack('<H', numCrds))
 f.write(struct.pack('%sf' % numCrds, *crds))
+
 f.write(bytes([0x4D, 0xE7]))
-f.write(struct.pack('>H', numNorms))
+f.write(struct.pack('<H', numNorms))
 f.write(struct.pack('%sf' % numNorms, *norms))
+
+f.write(bytes([0x4D, 0xE8]))
+f.write(struct.pack('<H', numArms))
+f.write(struct.pack('%sf' % numArms, *arms))
 
 f.close()
