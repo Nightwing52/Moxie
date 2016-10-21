@@ -18,15 +18,15 @@ Mesh::Mesh(const string &filename) {
                 file.read((char*)&secSize, 2);
                 switch(secHead) {
                         case 0xE54D:
-                                m_vertices = new glm::vec3[secSize];
+                                m_vertices = new glm::vec3[secSize/3];
                                 file.read((char*)m_vertices, secSize*4);
                                 break;
                         case 0xE64D:
-                                m_texCoords = new glm::vec2[secSize];
+                                m_texCoords = new glm::vec2[secSize/3];
                                 file.read((char*)m_texCoords, secSize*4);
                                 break;
                         case 0xE74D:
-                                m_normals = new glm::vec3[secSize];
+                                m_normals = new glm::vec3[secSize/3];
                                 file.read((char*)m_normals, secSize*4);
                                 break;
                         case 0xE84D:
