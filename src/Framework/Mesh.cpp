@@ -16,6 +16,8 @@ Mesh::Mesh(const string &filename) {
         while (!file.eof()) {
                 file.read((char*)&secHead, 2);
                 file.read((char*)&secSize, 2);
+                if (secSize > VERTEX_LIMIT)
+                        throw runtime_error(filename + " exceeds vertex limit");
                 switch(secHead) {
                         case 0xE54D:
                                 m_vertices = new glm::vec3[secSize/3];
@@ -68,6 +70,11 @@ void Mesh::Draw(const float x, const float y, const float z) {
         pos.x = x;
         pos.y = y;
         pos.z = z;
+
+        glBindVertexArray(m_VAO);
+        glDrawElementsBaseVertex(GL_TRIANGLES, sizeof(m_vertices)/4,
+                        GL_FLOAT, 0, 0);
+        glBindVertexArray(0);
 }
 
 Mesh::~Mesh() {

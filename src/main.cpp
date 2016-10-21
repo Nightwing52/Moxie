@@ -24,6 +24,7 @@ int main(int argc, char *argv[]) {
                                 default:
                                         break;
                         }
+                        model.Draw(0, 0, 0);
                         screen.Swap();
                 }
         } catch (exception &e) {
