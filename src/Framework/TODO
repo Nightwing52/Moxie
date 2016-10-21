@@ -1,2 +1,1 @@
-*Fix invalid memory reads on Mesh.cpp:60,65,70,76
 *Test Mesh constructor with the Moxie 3D model format

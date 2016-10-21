@@ -1,4 +1,4 @@
-#include "Shader.h"
+#include "MoxieCore/Shader.h"
 
 Shader::Shader(const string &filename, unsigned int type) {
         ifstream file;

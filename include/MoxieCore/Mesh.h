@@ -10,6 +10,7 @@
 using namespace std;
 
 #define NUM_BUFFERS 4
+#define VERTEX_LIMIT 65534
 
 enum MeshBuffers {
         POSITION_VB,
@@ -27,7 +28,6 @@ class Mesh {
                 glm::vec3 *m_vertices;
                 glm::vec3 *m_normals;
                 glm::vec2 *m_texCoords;
-                glm::vec3 *m_indices;
                 GLuint m_VAO;
                 GLuint m_VABs[NUM_BUFFERS];
 };

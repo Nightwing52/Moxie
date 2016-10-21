@@ -1,4 +1,4 @@
-#include "Display.h"
+#include "MoxieCore/Display.h"
 
 Display::Display(const string &title, const int width, const int height) {
         if (SDL_Init(SDL_INIT_EVERYTHING) != 0)
@@ -6,7 +6,7 @@ Display::Display(const string &title, const int width, const int height) {
 
         gWin = SDL_CreateWindow(title.c_str(), SDL_WINDOWPOS_UNDEFINED,
                         SDL_WINDOWPOS_UNDEFINED, width, height,
-                        SDL_WINDOW_FULLSCREEN | SDL_WINDOW_OPENGL);
+                        SDL_WINDOW_OPENGL | SDL_WINDOW_FULLSCREEN);
         gCont = SDL_GL_CreateContext(gWin);
 
         if (gWin == NULL)

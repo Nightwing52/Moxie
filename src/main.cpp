@@ -1,7 +1,7 @@
-#include "Display.h"
-#include "Shader.h"
-#include "Mesh.h"
-#include "Input.h"
+#include "MoxieCore/Display.h"
+#include "MoxieCore/Shader.h"
+#include "MoxieCore/Mesh.h"
+#include "MoxieCore/Input.h"
 #include <iostream>
 #include <stdexcept>
 using namespace std;
