@@ -9,7 +9,7 @@ using namespace std;
 struct Chatter {
         string text;
         int priority;
-}
+};
 
 class ChatterBox {
         public:
