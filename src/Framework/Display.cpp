@@ -1,12 +1,18 @@
 #include "MoxieCore/Display.h"
 
-Display::Display(const string &title, const int width, const int height) {
+Display::Display(const string &title, const int width, const int height, const bool fullscreen) {
         if (SDL_Init(SDL_INIT_EVERYTHING) != 0)
                 throw runtime_error(SDL_GetError());
 
-        gWin = SDL_CreateWindow(title.c_str(), SDL_WINDOWPOS_UNDEFINED,
-                        SDL_WINDOWPOS_UNDEFINED, width, height,
-                        SDL_WINDOW_OPENGL | SDL_WINDOW_FULLSCREEN);
+        Uint32 fullscreenFlag;
+        if(fullscreen)
+                fullscreenFlag=SDL_WINDOW_FULLSCREEN;
+
+        gWin = SDL_CreateWindow(title.c_str(),
+                        SDL_WINDOWPOS_UNDEFINED,
+                        SDL_WINDOWPOS_UNDEFINED,
+                        width, height,
+                        fullscreenFlag | SDL_WINDOW_OPENGL);
         gCont = SDL_GL_CreateContext(gWin);
 
         if (gWin == NULL)
@@ -22,6 +28,12 @@ Display::Display(const string &title, const int width, const int height) {
         SDL_GL_SetAttribute(SDL_GL_BLUE_SIZE, 5);
         SDL_GL_SetAttribute(SDL_GL_ALPHA_SIZE, 5);
         SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
+}
+
+bool Display::CheckExtensions(const string glVersion, const string extensions){
+        if(glewIsSupported(glVersion.c_str()) && glewIsSupported(extensions.c_str()))
+                return true;
+        return false;
 }
 
 void Display::Clear(void) {
