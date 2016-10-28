@@ -1,6 +1,3 @@
-#the CMAkeMods can be found here
-#NOTE: Because the Bullet module was found at the link before, it has dependencies to other CMakeModules
-#the depenedencies are provided below as well, 
 #you should include all of these into your CMakeMods folder
 #https://github.com/Kitware/CMake/tree/master/Modules
 #Bullet: https://github.com/Kitware/CMake/blob/master/Modules/FindBullet.cmake
