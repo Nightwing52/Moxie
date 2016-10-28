@@ -1,3 +1,14 @@
+#the CMAkeMods can be found here
+#NOTE: Because the Bullet module was found at the link before, it has dependencies to other CMakeModules
+#the depenedencies are provided below as well, 
+#you should include all of these into your CMakeMods folder
+#https://github.com/Kitware/CMake/tree/master/Modules
+#Bullet: https://github.com/Kitware/CMake/blob/master/Modules/FindBullet.cmake
+#https://github.com/Kitware/CMake/blob/master/Modules/FindPackageMessage.cmake
+#https://github.com/Kitware/CMake/blob/master/Modules/FindPackageHandleStandardArgs.cmake
+#https://github.com/Kitware/CMake/blob/master/Modules/CMakeParseArguments.cmake
+#Have a CMake module for SDL2 and glm as well
+
 cmake_minimum_required(VERSION 3.0)
 project("windfall" LANGUAGES CXX VERSION 0.02)
 
