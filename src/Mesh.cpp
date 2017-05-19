@@ -1,4 +1,4 @@
-#include "MoxieCore/Mesh.h"
+#include "Mesh.h"
 
 Mesh::Mesh(const string &filename) {
         ifstream file(filename.c_str(), ios::binary);

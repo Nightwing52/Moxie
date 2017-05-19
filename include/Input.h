@@ -27,7 +27,7 @@ class Input {
                 int GetMouseCoordinates(void);
 };
 
-/* remapping some of hte default SDL2 enums to something more user friendly */
+/* remapping some of the default SDL2 enums to something more user friendly */
 namespace rm{
         enum class Key : int{
                 /* mouse buttons */

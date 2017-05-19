@@ -2,6 +2,7 @@
 #define SHADER_H
 
 #include "GL/glew.h"
+#include "SDL2/SDL.h"
 #include <stdexcept>
 #include <fstream>
 #include <string>

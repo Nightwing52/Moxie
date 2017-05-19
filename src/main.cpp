@@ -1,9 +1,9 @@
 #include "Moxie.h"
 #include <iostream>
-#include <stdexcept>
 
 using namespace std;
 
 int main(int argc, char *argv[]) {
+		Display window("Hello Triangle", 720, 480, false);
         return 0;
 }
