@@ -1,4 +1,5 @@
 #include "Display.h"
+#include <SDL2/SDL.h>
 
 /* creates an OpenGL enabled window with GLEW and SDL2 */
 Display::Display(const string &title, const int width, const int height, const bool fullscreen) {

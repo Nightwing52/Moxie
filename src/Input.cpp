@@ -1,4 +1,5 @@
 #include "Input.h"
+#include <SDL2/SDL.h>
 
 /* setting up keyboard input */
 Input::Input(bool showCursor) {
