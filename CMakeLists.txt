@@ -32,11 +32,16 @@ set(SOURCES
         src/Input.cpp
         src/Shader.cpp
         src/Mesh.cpp
+	src/Singleton.cpp
+	src/Generic.cpp
 	include/Moxie.h
 	include/Display.h
 	include/Input.h
 	include/Mesh.h
 	include/Shader.h
+	include/Singleton.h
+	include/Constants.h
+	include/Generic.h
 )
 
 add_executable(${PROJECT_NAME} ${SOURCES})

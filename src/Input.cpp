@@ -1,58 +1,66 @@
 #include "Input.h"
-#include <SDL2/SDL.h>
+#include <Display.h>
 
 /* setting up keyboard input */
 Input::Input(bool showCursor) {
-        if(showCursor)
-                SDL_ShowCursor(SDL_ENABLE);
-        else
-                SDL_ShowCursor(SDL_DISABLE);
-        currentKeyboard=SDL_GetKeyboardState(&length);
-        lastKeyboard=new Uint8[length];
+	if(showCursor)
+		SDL_ShowCursor(SDL_ENABLE);
+	else
+		SDL_ShowCursor(SDL_DISABLE);
+	SDL_PumpEvents();
+	currentKeyboard=SDL_GetKeyboardState(NULL);
 }
 
 /* updating the keystate arrays */
-void Input::Update(void) {
-        /* storing last frame's array BEFORE updating */
-        std::memcpy(lastKeyboard,currentKeyboard,length);
-        SDL_PumpEvents();
+void Input::update(void) {
+	/* storing last frame's array BEFORE updating */
+	std::memcpy(lastKeyboard,currentKeyboard, sizeof(lastKeyboard));
+	SDL_PumpEvents();
+	
+	/* do we close? */
+	if(keyPressed(trigger))
+		delete window;
+}
+
+void Input::setDefaultCloseOperation(Key key, Display *window){
+	this->window=window;
+	trigger=key;
 }
 
 /* testing if the key was pressed */
-bool Input::KeyPressed(SDL_Scancode key){
-         return(!lastKeyboard[key] && currentKeyboard[key]);
+bool Input::keyPressed(Key key) {
+	return(!lastKeyboard[key] && currentKeyboard[key]);
 }
 
 /* testing if the key was released */
-bool Input::KeyReleased(SDL_Scancode key){
-        return(lastKeyboard[key] && !currentKeyboard[key]);
+bool Input::keyReleased(Key key) {
+	return(lastKeyboard[key] && !currentKeyboard[key]);
 }
 
 /* testing if the key was held */
-bool Input::KeyHeld(SDL_Scancode key){
-        return(lastKeyboard[key] && currentKeyboard[key]);
+bool Input::keyHeld(Key key) {
+	return(lastKeyboard[key] && currentKeyboard[key]);
 }
 
 /* testing if a button on the mouse is held; please pass in a SDL_BUTTON enum */
-bool Input::ButtonPressed(int mouseButton){
-        return(SDL_GetMouseState(NULL,NULL) & mouseButton);
+bool Input::buttonPressed(Button mouseButton) {
+	return(SDL_GetMouseState(NULL,NULL) & mouseButton);
 }
 
 /* getting the current 'x' coordinate */
-int Input::GetXCoordinate(void){
-        SDL_PumpEvents();
-        SDL_GetMouseState(&xCoordinate,NULL);
-        return xCoordinate;
+int Input::getXCoordinate(void) {
+	SDL_GetMouseState(&xCoordinate,NULL);
+	return xCoordinate;
 }
 
 /* getting the current 'y' coordinate */
-int Input::GetYCoordinate(void){
-        SDL_PumpEvents();
-        SDL_GetMouseState(NULL,&yCoordinate);
-        return yCoordinate;
+int Input::getYCoordinate(void) {
+	SDL_GetMouseState(NULL,&yCoordinate);
+	return yCoordinate;
 }
 
 /* cleaning up */
-Input::~Input(void){
-        delete lastKeyboard;
+Input::~Input(void) {
+	delete currentKeyboard;
+	delete lastKeyboard;
 }

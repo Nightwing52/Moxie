@@ -5,5 +5,8 @@
 #include "Input.h"
 #include "Mesh.h"
 #include "Shader.h"
+#include "Constants.h"
+#include "Generic.h"
+#include "Singleton.h"
 
 #endif

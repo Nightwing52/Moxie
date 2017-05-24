@@ -9,13 +9,13 @@
 using namespace std;
 
 class Shader {
-        public:
-                Shader(const string &filename, unsigned int type);
-                void Bind(void);
-                ~Shader();
-        private:
-                GLuint m_program;
-                GLuint m_shader;
+public:
+	Shader(const string &filename, unsigned int type);
+	void Bind(void);
+	~Shader();
+private:
+	GLuint m_program;
+	GLuint m_shader;
 };
 
 #endif

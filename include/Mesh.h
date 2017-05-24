@@ -13,23 +13,23 @@ using namespace std;
 #define VERTEX_LIMIT 65534
 
 enum MeshBuffers {
-        POSITION_VB,
-        TEXCOORD_VB,
-        NORMAL_VB,
-        INDEX_VB
+	POSITION_VB,
+	TEXCOORD_VB,
+	NORMAL_VB,
+	INDEX_VB
 };
 
 class Mesh {
-        public:
-                Mesh(const string &filename);
-                void Draw(const float x, const float y, const float z);
-                ~Mesh();
-        private:
-                glm::vec3 *m_vertices;
-                glm::vec3 *m_normals;
-                glm::vec2 *m_texCoords;
-                GLuint m_VAO;
-                GLuint m_VABs[NUM_BUFFERS];
+public:
+	Mesh(const string &filename);
+	void Draw(const float x, const float y, const float z);
+	~Mesh();
+private:
+	glm::vec3 *m_vertices;
+	glm::vec3 *m_normals;
+	glm::vec2 *m_texCoords;
+	GLuint m_VAO;
+	GLuint m_VABs[NUM_BUFFERS];
 };
 
 #endif
