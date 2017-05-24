@@ -5,3 +5,7 @@ Makefile
 install_manifest.txt
 windfall*
 *.log
+Moxie
+moxie.kdev4
+*.h.orig
+*.cpp.orig
