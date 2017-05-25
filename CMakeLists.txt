@@ -1,11 +1,3 @@
-#you should include all of these into your CMakeMods folder
-#https://github.com/Kitware/CMake/tree/master/Modules
-#Bullet: https://github.com/Kitware/CMake/blob/master/Modules/FindBullet.cmake
-#https://github.com/Kitware/CMake/blob/master/Modules/FindPackageMessage.cmake
-#https://github.com/Kitware/CMake/blob/master/Modules/FindPackageHandleStandardArgs.cmake
-#https://github.com/Kitware/CMake/blob/master/Modules/CMakeParseArguments.cmake
-#Have a CMake module for SDL2 and glm as well
-
 cmake_minimum_required(VERSION 3.0)
 project("Moxie" LANGUAGES CXX VERSION 0.02)
 
