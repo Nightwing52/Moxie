@@ -1,5 +1,4 @@
 #include "Input.h"
-#include <Display.h>
 
 /* setting up keyboard input */
 Input::Input(bool showCursor) {
@@ -8,18 +7,26 @@ Input::Input(bool showCursor) {
 	else
 		SDL_ShowCursor(SDL_DISABLE);
 	SDL_PumpEvents();
-	currentKeyboard=SDL_GetKeyboardState(NULL);
+	int length;
+	currentKeyboard=SDL_GetKeyboardState(&length);
+	lastKeyboard=new Uint8[length];
 }
 
 /* updating the keystate arrays */
 void Input::update(void) {
 	/* storing last frame's array BEFORE updating */
-	std::memcpy(lastKeyboard,currentKeyboard, sizeof(lastKeyboard));
+	std::memcpy(lastKeyboard, currentKeyboard, sizeof(currentKeyboard));
 	SDL_PumpEvents();
 	
 	/* do we close? */
 	if(keyPressed(trigger))
 		window->quit();
+	
+	SDL_Event *e=new SDL_Event();
+	while(SDL_PollEvent(e) != 0)
+		if(e->type == SDL_QUIT)
+			window->quit();
+	delete e;
 }
 
 void Input::setDefaultCloseOperation(Key key, Display *window){
@@ -61,6 +68,6 @@ int Input::getYCoordinate(void) {
 
 /* cleaning up */
 Input::~Input(void) {
-	delete currentKeyboard;
-	delete lastKeyboard;
+	delete []currentKeyboard;
+	delete []lastKeyboard;
 }

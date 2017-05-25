@@ -8,8 +8,8 @@ int main(int argc, char *argv[]) {
 	std::string error=window.getErrorLog();
 	if(error.empty()){
 		while(window.isRunning()) {
-			window.update();
 			input.update();
+			window.update();
 		}
 	}else
 		std::cout<<error;

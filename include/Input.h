@@ -4,6 +4,7 @@
 #include <array>
 #include <cstring> //for using memcpy
 #include <SDL2/SDL.h>
+#include <cstdio>
 #include "Display.h"
 #include "Constants.h"
 #include "Generic.h"

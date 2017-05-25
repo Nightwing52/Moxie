@@ -3,7 +3,6 @@
 /* creates an OpenGL enabled window with GLEW and SDL2 */
 Display::Display(const std::string title, const int width, const int height, const bool fullscreen) {
 	running=true;
-	std::cout<<"Here!";
 	/* initializing SDL2 */
 	if (SDL_Init(SDL_INIT_EVERYTHING) == 0){
 		/* defining attributes; using OpenGL version 3.0 */
@@ -50,6 +49,8 @@ bool Display::checkExtensions(const std::string extensions) {
 void Display::update(){
 	clear();
 	swap();
+	if(!isRunning())
+		delete this;
 }
 
 /* clearing the back buffer for drawing */
