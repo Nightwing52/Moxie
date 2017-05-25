@@ -1,4 +1,6 @@
 #include "Moxie.h"
+#include <string>
+#include <iostream>
 
 int main(int argc, char *argv[]) {
 	Display window("Hello Triangle", 720, 480, false);

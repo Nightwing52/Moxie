@@ -21,7 +21,9 @@ void Input::update(void) {
 	/* do we close? */
 	if(keyPressed(trigger))
 		window->quit();
-	
+
+	mouseState=SDL_GetMouseState(&xCoordinate, &yCoordinate);
+
 	SDL_Event *e=new SDL_Event();
 	while(SDL_PollEvent(e) != 0)
 		if(e->type == SDL_QUIT)
@@ -51,19 +53,21 @@ bool Input::keyHeld(Key key) {
 
 /* testing if a button on the mouse is held; please pass in a SDL_BUTTON enum */
 bool Input::buttonPressed(Button mouseButton) {
-	return(SDL_GetMouseState(NULL,NULL) & mouseButton);
+	return(mouseState & mouseButton);
 }
 
 /* getting the current 'x' coordinate */
 int Input::getXCoordinate(void) {
-	SDL_GetMouseState(&xCoordinate,NULL);
 	return xCoordinate;
 }
 
 /* getting the current 'y' coordinate */
 int Input::getYCoordinate(void) {
-	SDL_GetMouseState(NULL,&yCoordinate);
 	return yCoordinate;
+}
+
+Point Input::getPoint(void){
+	return Point(getXCoordinate(), getYCoordinate());
 }
 
 /* cleaning up */

@@ -1,10 +1,8 @@
 #ifndef INPUT_H
 #define INPUT_H
 
-#include <array>
 #include <cstring> //for using memcpy
 #include <SDL2/SDL.h>
-#include <cstdio>
 #include "Display.h"
 #include "Constants.h"
 #include "Generic.h"
@@ -30,5 +28,6 @@ private:
 	Uint8 *lastKeyboard;
 	int xCoordinate;
 	int yCoordinate;
+	Uint32 mouseState;
 };
 #endif

@@ -19,11 +19,11 @@ include_directories(
 )
 
 set(SOURCES
-        src/main.cpp
-        src/Display.cpp
-        src/Input.cpp
-        src/Shader.cpp
-        src/Mesh.cpp
+    src/main.cpp
+    src/Display.cpp
+    src/Input.cpp
+    src/Shader.cpp
+    src/Mesh.cpp
 	src/Singleton.cpp
 	src/Generic.cpp
 	include/Moxie.h
