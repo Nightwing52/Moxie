@@ -48,5 +48,8 @@ Use External Terminal=false
 Working Directory=
 isExecutable=false
 
+[MakeBuilder]
+Make Binary=/home/tyler/moxie/Moxie
+
 [Project]
 VersionControlSupport=kdevgit

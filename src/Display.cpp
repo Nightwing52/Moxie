@@ -2,6 +2,8 @@
 
 /* creates an OpenGL enabled window with GLEW and SDL2 */
 Display::Display(const std::string title, const int width, const int height, const bool fullscreen) {
+	running=true;
+	std::cout<<"Here!";
 	/* initializing SDL2 */
 	if (SDL_Init(SDL_INIT_EVERYTHING) == 0){
 		/* defining attributes; using OpenGL version 3.0 */
@@ -13,7 +15,6 @@ Display::Display(const std::string title, const int width, const int height, con
 		SDL_GL_SetAttribute(SDL_GL_ALPHA_SIZE, 8);
 		SDL_GL_SetAttribute(SDL_GL_BUFFER_SIZE, 32);
 		SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
-
 		/* creating the window and context */
 		if(fullscreen)
 			window=SDL_CreateWindow(title.c_str(), SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, width, height, SDL_WINDOW_FULLSCREEN | SDL_WINDOW_SHOWN | SDL_WINDOW_OPENGL);
@@ -22,7 +23,9 @@ Display::Display(const std::string title, const int width, const int height, con
 
 		/* error checking */
 		if (window != NULL){
-			if (SDL_GL_CreateContext(window) != NULL){
+			glewExperimental=GL_TRUE;
+			context=(SDL_GLContext *)SDL_GL_CreateContext(window);
+			if (context != NULL){
 				if (glewInit() != GLEW_OK)
 					errorLog+="GLEW could not be initialized!";
 			}else
@@ -58,6 +61,14 @@ void Display::clear(void) {
 /* swapping the buffer after drawing */
 void Display::swap(void) {
 	SDL_GL_SwapWindow(window);
+}
+
+bool Display::isRunning(){
+	return running;
+}
+
+void Display::quit(void){
+	running=false;
 }
 
 /* cleanig up */

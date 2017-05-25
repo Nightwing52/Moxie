@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+   <FileVersion major="1" minor="6" />
+   <Project>
+      <Option title="Moxie" />
+      <Option makefile_is_custom="1" />
+      <Option compiler="gcc" />
+      <Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\usr\;CMake Files\..\..\..\usr\lib\;CMake Files\..\..\..\usr\lib\x86_64-linux-gnu\;CMake Files\..\..\..\usr\lib\x86_64-linux-gnu\cmake\;CMake Files\..\..\..\usr\lib\x86_64-linux-gnu\cmake\SDL2\;CMake Files\CMakeMods\;" />
+      <Build>
+      <Target title="all">
+         <Option working_dir="/home/tyler/moxie" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/tyler/moxie/Makefile&quot;  VERBOSE=1 all" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/tyler/moxie/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/tyler/moxie/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/tyler/moxie/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="rebuild_cache">
+         <Option working_dir="/home/tyler/moxie" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/tyler/moxie/Makefile&quot;  VERBOSE=1 rebuild_cache" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/tyler/moxie/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/tyler/moxie/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/tyler/moxie/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="install">
+         <Option working_dir="/home/tyler/moxie" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/tyler/moxie/Makefile&quot;  VERBOSE=1 install" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/tyler/moxie/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/tyler/moxie/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/tyler/moxie/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="list_install_components">
+         <Option working_dir="/home/tyler/moxie" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/tyler/moxie/Makefile&quot;  VERBOSE=1 list_install_components" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/tyler/moxie/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/tyler/moxie/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/tyler/moxie/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="Moxie">
+         <Option output="/home/tyler/moxie/Moxie" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/tyler/moxie" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add directory="/home/tyler/moxie/external/glm-0.9.6.3" />
+            <Add directory="/home/tyler/moxie/include" />
+            <Add directory="/usr/include/SDL2" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/tyler/moxie/Makefile&quot;  VERBOSE=1 Moxie" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/tyler/moxie/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/tyler/moxie/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/tyler/moxie/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="Moxie/fast">
+         <Option output="/home/tyler/moxie/Moxie" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/tyler/moxie" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add directory="/home/tyler/moxie/external/glm-0.9.6.3" />
+            <Add directory="/home/tyler/moxie/include" />
+            <Add directory="/usr/include/SDL2" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/tyler/moxie/Makefile&quot;  VERBOSE=1 Moxie/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/tyler/moxie/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/tyler/moxie/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/tyler/moxie/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="install/strip">
+         <Option working_dir="/home/tyler/moxie" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/tyler/moxie/Makefile&quot;  VERBOSE=1 install/strip" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/tyler/moxie/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/tyler/moxie/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/tyler/moxie/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="install/local">
+         <Option working_dir="/home/tyler/moxie" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/tyler/moxie/Makefile&quot;  VERBOSE=1 install/local" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/tyler/moxie/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/tyler/moxie/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/tyler/moxie/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="edit_cache">
+         <Option working_dir="/home/tyler/moxie" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/tyler/moxie/Makefile&quot;  VERBOSE=1 edit_cache" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/tyler/moxie/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/tyler/moxie/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/tyler/moxie/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      </Build>
+      <Unit filename="/home/tyler/moxie/include/Constants.h">
+         <Option target="Moxie"/>
+      </Unit>
+      <Unit filename="/home/tyler/moxie/include/Display.h">
+         <Option target="Moxie"/>
+      </Unit>
+      <Unit filename="/home/tyler/moxie/include/Generic.h">
+         <Option target="Moxie"/>
+      </Unit>
+      <Unit filename="/home/tyler/moxie/include/Input.h">
+         <Option target="Moxie"/>
+      </Unit>
+      <Unit filename="/home/tyler/moxie/include/Mesh.h">
+         <Option target="Moxie"/>
+      </Unit>
+      <Unit filename="/home/tyler/moxie/include/Moxie.h">
+         <Option target="Moxie"/>
+      </Unit>
+      <Unit filename="/home/tyler/moxie/include/Shader.h">
+         <Option target="Moxie"/>
+      </Unit>
+      <Unit filename="/home/tyler/moxie/include/Singleton.h">
+         <Option target="Moxie"/>
+      </Unit>
+      <Unit filename="/home/tyler/moxie/src/Display.cpp">
+         <Option target="Moxie"/>
+      </Unit>
+      <Unit filename="/home/tyler/moxie/src/Generic.cpp">
+         <Option target="Moxie"/>
+      </Unit>
+      <Unit filename="/home/tyler/moxie/src/Input.cpp">
+         <Option target="Moxie"/>
+      </Unit>
+      <Unit filename="/home/tyler/moxie/src/Mesh.cpp">
+         <Option target="Moxie"/>
+      </Unit>
+      <Unit filename="/home/tyler/moxie/src/Shader.cpp">
+         <Option target="Moxie"/>
+      </Unit>
+      <Unit filename="/home/tyler/moxie/src/Singleton.cpp">
+         <Option target="Moxie"/>
+      </Unit>
+      <Unit filename="/home/tyler/moxie/src/main.cpp">
+         <Option target="Moxie"/>
+      </Unit>
+      <Unit filename="/home/tyler/moxie/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\" />
+      </Unit>
+      <Unit filename="/home/tyler/moxie/../../../usr/lib/x86_64-linux-gnu/cmake/SDL2/sdl2-config.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\usr\lib\x86_64-linux-gnu\cmake\SDL2\" />
+      </Unit>
+      <Unit filename="/home/tyler/moxie/CMakeMods/Findglm.cmake">
+          <Option virtualFolder="CMake Files\CMakeMods\" />
+      </Unit>
+   </Project>
+</CodeBlocks_project_file>

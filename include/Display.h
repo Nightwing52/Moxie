@@ -13,8 +13,11 @@ public:
 	std::string getErrorLog();
 	bool checkExtensions(const std::string extensions);
 	void update();
+	bool isRunning();
+	void quit();
 	~Display();
 private:
+	bool running;
 	SDL_Window *window;
 	SDL_GLContext *context;
 	std::string errorLog;

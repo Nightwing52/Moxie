@@ -19,7 +19,7 @@ void Input::update(void) {
 	
 	/* do we close? */
 	if(keyPressed(trigger))
-		delete window;
+		window->quit();
 }
 
 void Input::setDefaultCloseOperation(Key key, Display *window){
