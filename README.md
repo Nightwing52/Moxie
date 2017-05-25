@@ -1,7 +1,4 @@
-Windfall
-========
+Moxie
 
-Windfall is an open source, 3D RPG set in the ancient kingdom of
-Galadriel. All documentation can be found in the doc/ directory.
-
-Copyright 2016 Daniel Holman <coderdan657@gmail.com>
+Moxie is a open-source 3D game engine programmed in C++. It utilizes OpenGL for rendering, SDL2 for cross-platform window
+creation and input handling, and Bullet for physics simulation.
