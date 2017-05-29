@@ -25,7 +25,7 @@ set(SOURCES
     src/Shader.cpp
     src/Mesh.cpp
 	src/Singleton.cpp
-	src/Generic.cpp
+	src/Utility.cpp
 	include/Moxie.h
 	include/Display.h
 	include/Input.h
@@ -33,7 +33,7 @@ set(SOURCES
 	include/Shader.h
 	include/Singleton.h
 	include/Constants.h
-	include/Generic.h
+	include/Utility.h
 )
 
 add_executable(${PROJECT_NAME} ${SOURCES})

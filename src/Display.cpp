@@ -27,6 +27,7 @@ Display::Display(const std::string title, const int width, const int height, con
 			if (context != NULL){
 				if (glewInit() != GLEW_OK)
 					errorLog+="GLEW could not be initialized!";
+				glGetError();
 			}else
 				errorLog+="OpenGL context could not be created! "+std::string(SDL_GetError());
 		}else

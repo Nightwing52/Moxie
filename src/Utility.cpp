@@ -1,4 +1,4 @@
-#include "Generic.h"
+#include "Utility.h"
 
 Point::Point(int x, int y){
 	this->x=x;

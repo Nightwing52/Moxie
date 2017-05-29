@@ -1,5 +1,5 @@
-#ifndef GENERIC_H
-#define GENERIC_H
+#ifndef UTILITY_H
+#define UTILITY_H
 
 class Point{
 	public:

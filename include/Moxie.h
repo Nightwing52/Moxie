@@ -6,7 +6,7 @@
 #include "Mesh.h"
 #include "Shader.h"
 #include "Constants.h"
-#include "Generic.h"
+#include "Utility.h"
 #include "Singleton.h"
 
 #endif

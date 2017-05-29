@@ -5,7 +5,7 @@
 #include <SDL2/SDL.h>
 #include "Display.h"
 #include "Constants.h"
-#include "Generic.h"
+#include "Utility.h"
 
 class Input {
 public:

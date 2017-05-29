@@ -1,35 +1,25 @@
 #ifndef MESH_H
 #define MESH_H
 
-#include "GL/glew.h"
-#include "glm/glm.hpp"
-#include <vector>
-#include <fstream>
 #include <string>
-#include <stdexcept>
-using namespace std;
-
-#define NUM_BUFFERS 4
-#define VERTEX_LIMIT 65534
-
-enum MeshBuffers {
-	POSITION_VB,
-	TEXCOORD_VB,
-	NORMAL_VB,
-	INDEX_VB
-};
+#include <GL/glew.h>
+#include <glm/glm.hpp>
+#include "Shader.h"
 
 class Mesh {
 public:
-	Mesh(const string &filename);
-	void Draw(const float x, const float y, const float z);
+	static Mesh *createMesh(const std::string *filename);
+	static Mesh *createMesh(glm::vec3 *vertices, unsigned int numVertices, glm::vec3 *normals, glm::vec2 *textureCoordinates);
+	void draw();
 	~Mesh();
 private:
-	glm::vec3 *m_vertices;
-	glm::vec3 *m_normals;
-	glm::vec2 *m_texCoords;
-	GLuint m_VAO;
-	GLuint m_VABs[NUM_BUFFERS];
+	glm::vec3 *vertices;
+	glm::vec3 *normals;
+	glm::vec2 *textureCoordinates;
+	unsigned int numVertices;
+	GLuint VAO;
+	GLuint VBO;
+	void setup(void);
 };
 
 #endif
