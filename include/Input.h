@@ -10,7 +10,7 @@
 class Input {
 public:
 	Input(bool showCursor);
-	void update(void);
+	bool update(void);
 	void setDefaultCloseOperation(Key key, Display *window);
 	bool keyPressed(Key key);
 	bool keyReleased(Key key);

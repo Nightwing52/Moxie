@@ -13,22 +13,23 @@ Input::Input(bool showCursor) {
 }
 
 /* updating the keystate arrays */
-void Input::update(void) {
+bool Input::update(void) {
 	/* storing last frame's array BEFORE updating */
 	std::memcpy(lastKeyboard, currentKeyboard, sizeof(currentKeyboard));
 	SDL_PumpEvents();
-	
-	/* do we close? */
-	if(keyPressed(trigger))
-		window->quit();
 
 	mouseState=SDL_GetMouseState(&xCoordinate, &yCoordinate);
 
+	/* do we close? */
+	if(keyPressed(trigger))
+		return true;
+    bool quit=false;
 	SDL_Event *e=new SDL_Event();
 	while(SDL_PollEvent(e) != 0)
 		if(e->type == SDL_QUIT)
-			window->quit();
+			quit=true;
 	delete e;
+	return quit;
 }
 
 void Input::setDefaultCloseOperation(Key key, Display *window){
@@ -72,6 +73,5 @@ Point Input::getPoint(void){
 
 /* cleaning up */
 Input::~Input(void) {
-	delete []currentKeyboard;
 	delete []lastKeyboard;
 }

@@ -1,37 +1,30 @@
 #include "Singleton.h"
 
-Singleton *Singleton::singleton;
+Singleton *Singleton::singleton=new Singleton();
 
 Singleton::Singleton(void){}
 
 Singleton* Singleton::getInstance(void){
-	if(Singleton::singleton == NULL)
-		Singleton::singleton=new Singleton();
 	return Singleton::singleton;
 }
 
-void Singleton::add(Display *display){
-	this->display=display;
-	if(input != NULL)
-		initialize();
-}
-
-void Singleton::add(Input *input){
+void Singleton::add(Display *display, Input *input, Key closeOn){
+    this->display=display;
 	this->input=input;
-	if(display != NULL)
-		initialize();
-}
-
-void Singleton::initialize(void){
-	
+	this->input->setDefaultCloseOperation(closeOn, this->display);
 }
 
 void Singleton::update(void){
-	display->update();
-	input->update();
+    if(this->input->update() == true)
+        this->running=false;
+	this->display->update();
+}
+
+bool Singleton::isRunning(void){
+    return this->running;
 }
 
 Singleton::~Singleton(void){
-	delete input;
-	delete display;
+	delete this->input;
+	delete this->display;
 }

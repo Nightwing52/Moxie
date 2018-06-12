@@ -7,9 +7,9 @@
 class Singleton{
 	public:
 		static Singleton *getInstance(void);
-		void add(Display *display);
-		void add(Input *input);
+		void add(Display *display, Input *input, Key closeOn);
 		void update(void);
+		bool isRunning(void);
 		~Singleton(void);
 	private:
 		static Singleton *singleton;
@@ -17,5 +17,6 @@ class Singleton{
 		Input *input;
 		Singleton(void);
 		void initialize();
+		bool running=true;
 };
 #endif
